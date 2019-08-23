@@ -1,0 +1,121 @@
+<div class="col-sm-12">
+    <h2>{{ editando ? 'Ediçao de ' : 'Nova'}} Cidade</h2>
+</div>
+<div class="ibox-content">
+<form #f="ngForm" autocomplete="off" (ngSubmit)="f.form.valid && salvar(f);" novalidate>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Nome</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" name="nome" [(ngModel)]="cidade.nome"
+                #nome="ngModel" required minlength="3" maxlength="25">
+               
+                <app-message [control]="nome" error="required"
+                text="Informe o nome da cidade"></app-message>  
+
+                <app-message [control]="nome" error="minlength"
+                text="Mínimo de {{ nome.errors?.minlength?.requiredLength }} caracteres!"></app-message>
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Estado</label>
+            <div class="col-sm-5">
+              <select  class="form-control m-b" name="estado" [(ngModel)]="cidade.estado" 
+              #estado="ngModel">
+                    <option value="0">Selecione</option>
+                    <option *ngFor="let estado of estados" [value]="estado" required>{{estado.nome}}</option>
+              </select>
+
+              <app-message [control]="estado" error="required"
+              text="Selecione o estado!"></app-message>  
+            </div>  
+        </div> 
+    
+        <div class="form-group row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <button class="btn btn-danger btn-sm" (click)="onReset(f)">Cancel</button>
+                    <button class="btn btn-primary btn-sm" type="submit" [disabled]="!f.form.valid">Salvar Alterações</button>
+                </div>
+        </div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>Lista de Países</h5>
+                    </div>
+    
+                    <div class="ibox-content">
+                            <input type="text" class="form-control form-control-sm m-b-xs" id="filter"
+                            placeholder="Procurar">
+    
+                        <table class="footable table table-stripped toggle-arrow-tiny" data-filter=#filter>
+                            <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Nome</th>
+                                <th>Pais</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let cidade of cidades">
+                                <td>{{ cidade.codigo }}</td>
+                                <td>{{ cidade.nome }}</td>
+                                <td>{{ cidade.pais }}</td>
+                                                               
+                                <td><a [routerLink]="['/cadastro-cidade', cidade.codigo]">
+                                    <i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" 
+                                    title="Editar"></i></a></td>
+
+                                <td><a (click)="prepararExclusao(cidade)" data-toggle="modal" data-target="#confirmaExclusao">
+                                    <i class="fa fa-close" data-toggle="tooltip" data-placement="top"
+                                    title="Excluir"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td *ngIf="cidades.length == 0">Nenhuma cidade encontrada!</td>
+                            </tr>
+                            
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <td colspan="5">
+                                    <ul class="pagination float-right"></ul>
+                                </td>
+                            </tr>
+                            </tfoot>
+                        </table>
+
+                        <div class="modal inmodal" id="confirmaExclusao" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+                                <div class="modal-dialog">
+                                    <div class="modal-content animated flipInY">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                            <i class="fa fa-window-close modal-icon"></i>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3 class="modal-title">Deseja realmente excluir {{cidadeSelecionada.nome}}?</h3>
+                                        </div>
+                                       
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-danger" (click)="excluir(cidadeSelecionada.codigo)"
+                                            data-dismiss="modal"> Excluir </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    
+</form>
+</div>
+
+

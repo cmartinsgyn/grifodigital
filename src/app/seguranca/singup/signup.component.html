@@ -1,0 +1,100 @@
+<form [formGroup]="signupForm" class="form mt-4" (submit)="signup()">
+    <div class="form-group">
+        <input formControlName="email" class="form-control" placeholder="email" autofocus>
+        
+    </div>
+
+    <div class="form-group">
+        <input formControlName="nome" class="form-control" placeholder="full name">
+        
+    </div>
+
+    <div class="form-group">
+        <input formControlName="userName" class="form-control" placeholder="user name">
+        
+        <small *ngIf="signupForm.get('userName').valid" class="text-success">User available</small>
+    </div>
+
+    <div class="form-group">
+        <input formControlName="password" type="password" class="form-control" placeholder="password">
+        
+    </div>
+
+    <button [disabled]="signupForm.invalid || signupForm.pending" class="btn btn-primary btn-block">Register</button>
+
+    <p>Already a user?<a [routerLink]="['']">Sign In!</a></p>
+
+</form>
+
+<!-- 
+<form [formGroup]="signupForm" class="form mt-4" (submit)="signup()">
+    <div class="form-group">
+        <input formControlName="email" class="form-control" placeholder="email" autofocus>
+        <app-message [control]="email" error="required"
+                    text="Email é obrigatório"></app-message>  
+        
+        <app-message [control]="email" error="email"
+                    text="Email incorreto!"></app-message>  
+        
+    </div>
+
+    <div class="form-group">
+        <input formControlName="nome" class="form-control" placeholder="full name">
+        <app-message [control]="nome" error="required"
+                    text="Email é obrigatório"></app-message>  
+        
+        <app-message [control]="nome" error="minlength"
+                    text="Mínimo de 03 caracteres"></app-message>  
+        
+        <app-message [control]="nome" error="maxlength"
+                    text="Mínimo de 40 caracteres"></app-message>  
+    </div>
+
+    <div class="form-group">
+        <input formControlName="userName" class="form-control" placeholder="user name">
+        <app-message 
+            *ngIf="signupForm.get('userName').errors?.required"
+            text="User name is required!">
+        </app-message>
+        <app-message 
+            *ngIf="signupForm.get('userName').errors?.minlength"
+            text="Mininum length is 2">
+        </app-message>
+        <app-message 
+            *ngIf="signupForm.get('userName').errors?.maxlength"
+            text="Maximun length is 30">
+        </app-message>
+        <app-message 
+            *ngIf="signupForm.get('userName').errors?.lowerCase"
+            text="Must be lower case">
+        </app-message>
+
+        <app-message 
+            text="Username already taken" 
+            *ngIf="signupForm.get('userName').errors?.userNameTaken">
+        </app-message> 
+        <small *ngIf="signupForm.get('userName').valid" class="text-success">User available</small>
+    </div>
+
+    <div class="form-group">
+        <input formControlName="password" type="password" class="form-control" placeholder="password">
+        <app-message 
+            *ngIf="signupForm.get('password').errors?.required"
+            text="Password is required!">
+        </app-message>
+        <app-message 
+            *ngIf="signupForm.get('password').errors?.minlength"
+            text="Mininum length is 8">
+        </app-message>
+        <app-message 
+            *ngIf="signupForm.get('password').errors?.maxlength"
+            text="Maximun length is 18">
+        </app-message>
+    </div>
+
+    <button [disabled]="signupForm.invalid || signupForm.pending" class="btn btn-primary btn-block">Register</button>
+
+    <p>Already a user?<a [routerLink]="['']">Sign In!</a></p>
+
+</form> -->
+

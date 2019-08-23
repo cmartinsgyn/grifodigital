@@ -1,0 +1,112 @@
+<!-- LAYOUT PRINCIPAL -->
+<div id="wrapper">
+    <ap-header></ap-header>
+  <!-- Barra de Navegação -->
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+
+                        <li>
+                              
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-envelope"></i>  <span class="label label-warning">1</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-messages">
+                                    <li>
+                                        <div class="dropdown-messages-box">
+                                            
+                                            <a class="dropdown-item float-left" href="profile.html">
+                                                <img alt="image" class="rounded-circle" src="../assets/images/a7.jpg">
+                                            </a>
+                                            <div class="media-body">
+                                                <strong>Ten Pascoal</strong>
+                                                <br> IME VENCIDO <small class="float-right">23/08/2019</small><br> 
+                                                <small class="text-muted">3 dias</small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                
+                                    <li>
+                                        <div class="text-center link-block">
+                                            <a href="mailbox.html" class="dropdown-item">
+                                                <i class="fa fa-envelope"></i> <strong>Ver Todas as Messages</strong>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                    
+                            <li class="dropdown">
+                                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-bell"></i>  <span class="label label-danger">12</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-alerts">
+                                    
+                                    <li>
+                                        <a href="grid_options.html" class="dropdown-item">
+                                            <div>
+                                                <i class="fa fa-upload fa-fw"></i> Componentes Vencidos
+                                                <span class="float-right text-muted small"> 10 </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="mailbox.html" class="dropdown-item">
+                                            <div>
+                                                <i class="fa fa-wrench fa-fw"></i> Aeronaves próximas da manutenção
+                                                  <span class="float-right text-muted small"> 2 </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                   
+                                </ul>
+                            </li>
+            
+
+                    <li style="padding: 20px">
+                        <span class="m-r-sm text-muted welcome-message">Olá Tenente Pascoal</span>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> Sair
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+        </div>
+
+        <!-- Menu ou texto fixo acima -->
+       
+        <!--Corpo -->
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <router-outlet></router-outlet>
+                    <ng2-toasty></ng2-toasty>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer">
+            <div class="float-right">
+                By Cláudio M. da Silva - cmartinsgyn@gmail.com
+            </div>
+            <div>
+                <strong>SAEG - </strong> Serviço aéreo de Goiás &copy; 2019
+            </div>
+        </div>
+        
+    </div>
+</div>

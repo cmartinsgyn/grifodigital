@@ -1,0 +1,17 @@
+OK* Fazer o layout principal em layout.component.html para usar a foto que quero
+  no carousel ou simples. Verificar como construir com o spinia(http://webapplayers.com/inspinia_admin-v2.9.2/carousel.html)
+
+ * diretivas de validacoes e mascaras personalizadas  
+-exemplo de diretiva para validação personalizada 
+  https://jsonworld.com/demo/angular-8-template-driven-form-validation
+-exemplo de maskara
+   http://kazale.com/angular-2-mascara-entrada-dados-input-mask-diretivas/   
+  - olhar arquivo: validacoes.directive
+  
+
+* CAIXA DE EMAIL
+    Na barra superior direito em app.component.html. substituir por tarefas ou mensagens ou algo do tipo(decidir)
+- fazer formulario de usuário e chamar onde é profile.html em app.component.html
+  - cada componente tem um href para jogar para uma página específicia.(http://webapplayers.com/inspinia_admin-v2.9.2/profile.html)
+
+*Contruir componente de usuarios com spinia

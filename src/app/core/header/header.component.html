@@ -1,0 +1,187 @@
+<!-- MENU LATERAL -->
+<nav class="navbar-light navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <img alt="image" class="rounded-circle" src="/assets/images/pascoal_small.jpg" />
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="block m-t-xs font-bold">Tenente Pascoal</span>
+                        <span class="text-muted text-xs block">Dados do Usuário
+                            <b class="caret"></b>
+                        </span>
+                    </a>
+                    <!-- menu de interação com a Foto -->
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li>
+                            <a class="dropdown-item" href="profile.html">Conta</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="contacts.html">Contatos</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="mailbox.html">Linha do Tempo</a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item" (click)="logout()">Sair</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+            </li>
+              <!-- elementos do menu -->
+            <li routerLinkActive="active">
+               <a routerLink="/home">
+                  <i class="fa fa-th-large"></i>
+                    <span class="nav-label">Home</span>
+               </a>      
+            </li>
+              <!-- Menu: administrar -->    
+            <li routerLinkActive="active">
+                <a href="index.html">
+                    <i class="fa fa-cogs"></i>
+                    <span class="nav-label">Administrar</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level">
+                    <li routerLinkActive="active">
+                        <a routerLink="/usuario-cadastro">Manter Usuário</a>
+                    </li>
+                </ul>
+                <ul class="nav nav-second-level">
+                    <li routerLinkActive="active">
+                        <a routerLink="/usuario-grupo">Manter Grupos</a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Menu: agendamento -->    
+            <li routerLinkActive="active">
+                <a href="index.html">
+                    <i class="fa fa-book"></i>
+                    <span class="nav-label">Agendamento</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level">
+                    <li routerLinkActive="active">
+                        <a routerLink="/agendamento-cadastro">Cadastro</a>
+                    </li>
+                </ul>
+                <ul class="nav nav-second-level">
+                    <li routerLinkActive="active">
+                        <a routerLink="/agendamento-list">Lista de Agendamentos</a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Menu: atendimento -->    
+            <li routerLinkActive="active">
+                <a href="index.html">
+                    <i class="fa fa-phone"></i>
+                    <span class="nav-label">Atendimento</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level">
+                    <li routerLinkActive="active">
+                        <a routerLink="/atendimento-cadastro">Gerenciamento</a>
+                    </li>
+                </ul>
+                <ul class="nav nav-second-level">
+                    <li routerLinkActive="active">
+                        <a routerLink="/atendimento-list">Lista dos Atendimentos</a>
+                    </li>
+                </ul>
+            </li>
+
+              <!-- Menu: Cadastros -->    
+              <li routerLinkActive="active">
+                <a href="index.html">
+                    <i class="fa fa-edit"></i>
+                    <span class="nav-label">Cadastro</span>
+                    <span class="fa arrow"></span>
+                </a>
+              
+                    <ul class="nav nav-second-level" >
+                        <li routerLinkActive="active">
+                            <a routerLink="/cadastro-paises">De função</a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-second-level">
+                        <li routerLinkActive="active">
+                            <a routerLink="/cadastro-cidade">De cidades</a>
+                        </li>
+                    </ul>
+                    
+                
+                <ul class="nav nav-second-level">
+                        <li routerLinkActive="active">
+                              <a href="index.html">
+                                 <span class="nav-label">Listas</span>
+                                 <span class="fa arrow"></span>
+                              </a>
+                                   
+                          <ul class="nav nav-third-level" >
+                              <li routerLinkActive="active">
+                                  <a routerLink="/list-paises">Lista de paises</a>
+                              </li>
+                          </ul>                          
+                        </li> 
+                      </ul>
+              </li>   
+              
+  
+        
+    </ul>
+  </div>
+</nav>
+
+<!-- <header class="fixed-top">
+    <nav class="navbar navbar-light bg-white">
+        <a class="navbar-brand">ALURAPIC</a>
+
+        <div *ngIf="(user$ | async) as user; else login">
+            <i class="fa fa-user-circle mr-1"></i>
+            <a class="mr-1">{{ user.name}}</a>
+            <a (click)="logout()">(Logout)</a>
+        </div>
+
+        <ng-template #login>
+            <span class="navbar-text">
+                <a [routerLink]="['']">Please, login!</a>
+            </span>
+        </ng-template> 
+
+    </nav>
+</header> -->
+
+
+<!-- <li routerLinkActive="active">
+    <a href="index.html">
+        <i class="fa fa-edit"></i>
+        <span class="nav-label">Cadastro</span>
+        <span class="fa arrow"></span>
+    </a>
+  
+    <ul class="nav nav-second-level">
+      <li routerLinkActive="active">
+            <a href="index.html">
+               <span class="nav-label">Lançamento</span>
+               <span class="fa arrow"></span>
+            </a>
+                 
+        <ul class="nav nav-third-level" >
+            <li routerLinkActive="active">
+                <a routerLink="/cadastro-paises">De paises</a>
+            </li>
+        </ul>
+        <ul class="nav nav-third-level">
+            <li routerLinkActive="active">
+                <a routerLink="/cadastro-cidade">De cidades</a>
+            </li>
+        </ul>
+        
+      </li> 
+    </ul> -->

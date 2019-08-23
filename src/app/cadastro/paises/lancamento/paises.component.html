@@ -1,0 +1,52 @@
+<div class="col-sm-12">
+        <h2>{{ editando ? 'Ediçao de ' : 'Novo'}} País</h2>
+    </div>
+<div class="ibox-content">
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="f.form.valid && salvar(f);" novalidate >
+        
+           <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Nome</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" appCaracterEspecial="nome"
+                    name="nome" [(ngModel)]="pais.nome" #nome="ngModel"
+                    required minlength="3" maxlength="25">
+                   
+                    <app-message [control]="nome" error="required"
+                    text="Informe o nome do país"></app-message>  
+
+                    <app-message [control]="nome" error="minlength"
+                    text="Mínimo de {{ nome.errors?.minlength?.requiredLength }} caracteres!"></app-message>
+               </div> 
+
+            </div>
+
+            <div class="form-group  row">
+                <label class="col-sm-2 col-form-label">Sigla</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" name="sigla" required
+                        #sigla="ngModel" [(ngModel)]="pais.sigla" minlength="2" maxlength="3">
+
+                    <app-message [control]="sigla" error="required"
+                     text="Informe a sigla do país"></app-message>  
+
+                    <app-message [control]="sigla" error="minlength"
+                    text="Ops! Mínimo de {{ nome.errors?.minlength?.requiredLength }} caracteres!"></app-message> 
+                 </div>
+                </div>
+            
+            <div class="form-group row">
+                    <div class="col-sm-7 col-sm-offset-2">
+                        <button class="btn btn-danger btn-sm" (click)="onReset(f)">Cancel</button>
+                        <button class="btn btn-primary btn-sm" type="submit" [disabled]="!f.valid">
+                            Salvar Alterações</button>
+                    </div>
+                    <div class="col-sm-2">    
+                        <button class="btn btn-warning btn-sm">
+                          <a routerLink="/list-paises" class="linkPesquisa">Ir para a pesquisa</a>
+                        </button> 
+                    </div>      
+            </div>
+            
+   </form>
+</div>
+
