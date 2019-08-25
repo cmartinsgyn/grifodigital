@@ -7,7 +7,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { Cidade } from '../../../core/model/Cidade';
 import { CidadeService } from './../cidade.service';
-import { PaisesService } from '../../paises/paises.service';
 import { ScriptListasService } from 'src/app/service/util-service/script-listas.service';
 
 @Component({
@@ -28,7 +27,6 @@ export class CidadeComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private toasty: ToastyService,
-    private paisesService: PaisesService,
     private scriptListService: ScriptListasService,
     private cidadeService: CidadeService,
     private enunService: EnunSevice
@@ -48,31 +46,48 @@ export class CidadeComponent implements OnInit {
   }
 
   listarCidades() {
-    this.cidadeService.listarTodas()
-    .then(resultado => {
-      this.cidades = resultado;
-    });
+    this.cidades =  [
+      {'codigo': 1, nome: 'Goiânia', estado: 'Goiás'},
+      {'codigo': 2, nome: 'Brasília', estado: 'Distrito Federal'},
+      {'codigo': 3, nome: 'Anápolis', estado: 'Goiás'},
+      {'codigo': 4, nome: 'São Paulo', estado: 'São Paulo'},
+      {'codigo': 5, nome: 'São Simão', estado: 'Goiás'},
+      {'codigo': 7, nome: 'Porto Seguro', estado: 'Bahia'},
+      {'codigo': 8, nome: 'Porto Seguro', estado: 'Bahia'},
+      {'codigo': 9, nome: 'Porto Seguro', estado: 'Bahia'},
+      {'codigo': 10, nome: 'Porto Seguro', estado: 'Bahia'}
+
+    ];
+    // this.cidadeService.listarTodas()
+    // .then(resultado => {
+    //   this.cidades = resultado;
+    // });
 
   }
 
   carregarEstados() {
-    this.enunService.buscaEstados()
-    .then(resultado => {
-      this.estados = resultado;
-      console.log(this.estados);
-    });
+    this.estados = [
+      {'codigo': 1, nome: 'Brasil'},
+      {'codigo': 2, nome: 'Estados Unidos'},
+      {'codigo': 3, nome: 'Israel'}
+    ];
+    // this.enunService.buscaEstados()
+    // .then(resultado => {
+    //   this.estados = resultado;
+    //   console.log(this.estados);
+    // });
 
   }
 
 
   editar(codigo: number) {
-    this.cidadeService.buscarPorCodigo(codigo)
-    .then(response => {
-      this.cidade = response;
-      console.log(`cidades da edição: ${this.cidade}`);
-      this.atualizarTituloEdicao();
-    })
-    .catch(erro => alert(`Deu ruim: ${erro}`));
+    
+    // this.cidadeService.buscarPorCodigo(codigo)
+    // .then(response => {
+    //   this.cidade = response;
+    //   this.atualizarTituloEdicao();
+    // })
+    // .catch(erro => alert(`Deu ruim: ${erro}`));
   }
 
   /** define o paramêtro se está ou não em edição*/

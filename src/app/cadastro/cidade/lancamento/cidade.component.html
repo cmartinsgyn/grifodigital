@@ -56,14 +56,14 @@
                             <tr>
                                 <th>Código</th>
                                 <th>Nome</th>
-                                <th>Pais</th>
+                                <th>Estado</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr *ngFor="let cidade of cidades">
                                 <td>{{ cidade.codigo }}</td>
                                 <td>{{ cidade.nome }}</td>
-                                <td>{{ cidade.pais }}</td>
+                                <td>{{ cidade.estado }}</td>
                                                                
                                 <td><a [routerLink]="['/cadastro-cidade', cidade.codigo]">
                                     <i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" 
