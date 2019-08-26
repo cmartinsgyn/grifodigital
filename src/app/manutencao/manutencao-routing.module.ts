@@ -1,12 +1,12 @@
 import { AgendamentoListComponent } from './agendamento-list/agendamento-list.component';
-import { AgendamentoCadastroComponent } from './agendamento-cadastro/agendamento-cadastro.component';
+import { ManutencaoLancamentoComponent } from './manutencao-lancamento/manutencao-lancamento.component';
 import { NgModule } from '@angular/core';
 // guard
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-    { path: 'agendamento-cadastro',
-     component: AgendamentoCadastroComponent,
+    { path: 'manutencao-lancamento',
+     component: ManutencaoLancamentoComponent,
      // canActivate: [AuthGuard],
      // data: { roles: ['ROLE_CADASTRAR_LANCAMENTO'] }
     },
@@ -24,4 +24,4 @@ const routes: Routes = [
     ],
     exports: [RouterModule]
 })
-  export class AgendamentoRoutingModule { }
+  export class ManutencaoRoutingModule { }

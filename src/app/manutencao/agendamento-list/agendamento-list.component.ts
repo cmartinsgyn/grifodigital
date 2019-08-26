@@ -1,4 +1,4 @@
-import { ScriptService } from '../script-agendamento.service';
+import { ScriptListasService } from 'src/app/service/util-service/script-listas.service';
 import { Component, OnInit } from '@angular/core';
 // import * as $ from 'jquery';
 
@@ -10,10 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class AgendamentoListComponent implements OnInit {
 
   constructor(
-    private scriptService: ScriptService
+    private scriptListasService: ScriptListasService
   ) {  }
 
   ngOnInit() {
-    this.scriptService.criarFooTable();
+    this.scriptListasService.criarFooTable();
   }
 }

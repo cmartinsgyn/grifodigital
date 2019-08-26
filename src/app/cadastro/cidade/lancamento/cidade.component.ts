@@ -80,14 +80,15 @@ export class CidadeComponent implements OnInit {
   }
 
 
-  editar(codigo: number) {
-    
+  editar(cidade: any) { // codigo: number
     // this.cidadeService.buscarPorCodigo(codigo)
     // .then(response => {
     //   this.cidade = response;
     //   this.atualizarTituloEdicao();
     // })
     // .catch(erro => alert(`Deu ruim: ${erro}`));
+
+    this.cidade = cidade;
   }
 
   /** define o paramêtro se está ou não em edição*/
@@ -111,7 +112,8 @@ export class CidadeComponent implements OnInit {
       this.listarCidades();
        this.toasty.success(`${this.cidadeSelecionada.nome} excluída com sucesso!`);
     })
-    .catch(erro => alert(erro));
+    .catch(erro =>
+      this.toasty.error('Ops! Ainda não pode excluir a cidade.'));
 
   }
 

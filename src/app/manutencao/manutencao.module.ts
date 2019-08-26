@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AgendamentoCadastroComponent } from './agendamento-cadastro/agendamento-cadastro.component';
+
 import { AgendamentoListComponent } from './agendamento-list/agendamento-list.component';
-import { AgendamentoRoutingModule } from './agendamento-routing.module';
+import { ManutencaoLancamentoComponent } from './manutencao-lancamento/manutencao-lancamento.component';
+import { ManutencaoRoutingModule } from './manutencao-routing.module';
 
 
 @NgModule({
     declarations: [
-        AgendamentoCadastroComponent,
+        ManutencaoLancamentoComponent,
         AgendamentoListComponent
     ],
 
@@ -16,7 +17,7 @@ import { AgendamentoRoutingModule } from './agendamento-routing.module';
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        AgendamentoRoutingModule,
+        ManutencaoRoutingModule,
     ]
 })
 export class AgendamentoModule {

@@ -14,10 +14,10 @@ export class HomeComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-  //   this.addJsToElement('assets/js/demo/morris-demo.js').onload = (teste) => {
-  //     console.log(teste);
-  // };
-  // this.scriptHome.popularGraficoHome();
+    this.addJsToElement('assets/js/demo/morris-demo.js').onload = (teste) => {
+      console.log(teste);
+  };
+  this.scriptHome.popularGraficoHome();
   }
 
   addJsToElement(src: string): HTMLScriptElement {

@@ -67,7 +67,7 @@
                                                                
                                 <td><a [routerLink]="['/cadastro-cidade', cidade.codigo]">
                                     <i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" 
-                                    title="Editar"></i></a></td>
+                                    title="Editar" (click)="editar(cidade)"></i></a></td>
 
                                 <td><a (click)="prepararExclusao(cidade)" data-toggle="modal" data-target="#confirmaExclusao">
                                     <i class="fa fa-close" data-toggle="tooltip" data-placement="top"

@@ -58,27 +58,27 @@
                 </ul>
             </li>
 
-            <!-- Menu: agendamento -->    
+            <!-- Menu: manutenção -->    
             <li routerLinkActive="active">
                 <a href="index.html">
-                    <i class="fa fa-book"></i>
-                    <span class="nav-label">Agendamento</span>
+                    <i class="fa fa-wrench"></i>
+                    <span class="nav-label">Manutenção</span>
                     <span class="fa arrow"></span>
                 </a>
                 <ul class="nav nav-second-level">
                     <li routerLinkActive="active">
-                        <a routerLink="/agendamento-cadastro">Cadastro</a>
+                        <a routerLink="/manutencao-lancamento">Cadastro</a>
                     </li>
                 </ul>
                 <ul class="nav nav-second-level">
                     <li routerLinkActive="active">
-                        <a routerLink="/agendamento-list">Lista de Agendamentos</a>
+                        <a routerLink="/agendamento-list">Lista de Manutenções</a>
                     </li>
                 </ul>
             </li>
 
             <!-- Menu: atendimento -->    
-            <li routerLinkActive="active">
+            <!-- <li routerLinkActive="active">
                 <a href="index.html">
                     <i class="fa fa-phone"></i>
                     <span class="nav-label">Atendimento</span>
@@ -94,7 +94,7 @@
                         <a routerLink="/atendimento-list">Lista dos Atendimentos</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
 
               <!-- Menu: Cadastros -->    
               <li routerLinkActive="active">
@@ -104,9 +104,9 @@
                     <span class="fa arrow"></span>
                 </a>
               
-                    <ul class="nav nav-second-level" >
+                    <ul class="nav nav-second-level">
                         <li routerLinkActive="active">
-                            <a routerLink="/cadastro-paises">De Aeronave</a>
+                            <a routerLink="/home">De Aeronave</a>
                         </li>
                     </ul>
                     <ul class="nav nav-second-level">
@@ -114,6 +114,32 @@
                             <a routerLink="/cadastro-cidade">De Cidade</a>
                         </li>
                     </ul>
+                    <ul class="nav nav-second-level">
+                        <li routerLinkActive="active">
+                              <a href="index.html">
+                                 <span class="nav-label">Componente</span>
+                                 <span class="fa arrow"></span>
+                              </a>
+                                   
+                          <ul class="nav nav-third-level" >
+                              <li routerLinkActive="active">
+                                  <a routerLink="/home">Modelo</a>
+                              </li>
+                          </ul>
+                          <ul class="nav nav-third-level">
+                              <li routerLinkActive="active">
+                                  <a routerLink="/home">Lançamento</a>
+                              </li>
+                          </ul>
+                          
+                        </li> 
+                      </ul>
+                    <ul class="nav nav-second-level">
+                        <li routerLinkActive="active">
+                            <a routerLink="/home">De Tripulação</a>
+                        </li>
+                    </ul>
+                    
               </li>   
               
   
