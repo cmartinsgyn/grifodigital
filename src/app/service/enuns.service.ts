@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
     ENUM_ESTADO: Estado[];
 
     constructor(private http: Http) {
-        this.estadosUrl = `${environment.apiUrl}/cidades/estados`;
+        // this.estadosUrl = `${environment.apiUrl}/cidades/estados`;
     }
 
     buscaEstados() {

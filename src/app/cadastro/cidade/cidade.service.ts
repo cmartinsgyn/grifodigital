@@ -10,7 +10,7 @@ export class CidadeService {
     cidadeUrl: string;
 
     constructor(private http: Http) {
-        this.cidadeUrl = `${environment.apiUrl}/cidades`;
+       // this.cidadeUrl = `${environment.apiUrl}/cidades`;
     }
 
     listarTodas(): Promise<any> {
