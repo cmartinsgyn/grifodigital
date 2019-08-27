@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import { Cidade } from 'src/app/core/model/Cidade';
+import { environment } from 'environments/environment';
+
+import { Cidade } from 'app/core/model/Cidade';
 
 @Injectable()
 export class CidadeService {
@@ -10,7 +11,7 @@ export class CidadeService {
     cidadeUrl: string;
 
     constructor(private http: Http) {
-       // this.cidadeUrl = `${environment.apiUrl}/cidades`;
+       this.cidadeUrl = `${environment.apiUrl}/cidades`;
     }
 
     listarTodas(): Promise<any> {

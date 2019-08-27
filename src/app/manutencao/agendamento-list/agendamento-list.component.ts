@@ -1,5 +1,6 @@
-import { ScriptListasService } from 'src/app/service/util-service/script-listas.service';
+
 import { Component, OnInit } from '@angular/core';
+import { ScriptListasService } from 'app/service/util-service/script-listas.service';
 // import * as $ from 'jquery';
 
 @Component({

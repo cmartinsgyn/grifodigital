@@ -7,7 +7,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { Cidade } from '../../../core/model/Cidade';
 import { CidadeService } from './../cidade.service';
-import { ScriptListasService } from 'src/app/service/util-service/script-listas.service';
+import { ScriptListasService } from 'app/service/util-service/script-listas.service';
+
 
 @Component({
   selector: 'app-cidade',
